@@ -21,6 +21,27 @@ The case study was NordicRide, a scooter and bike sharing platform operating acr
 - Repeated the test with Nginx inside a **Docker container** and compared performance — containers added no noticeable overhead
 - Pushed concurrent connections until the server failed, then explained how load balancers and auto-scaling would handle that load in production
 
+## Lab screenshots
+
+System inspection — `lscpu` and open ports with `ss -tuln`:
+
+![lscpu output](screenshots/01-lscpu.png)
+![Open ports](screenshots/02-open-ports.png)
+
+Load testing Nginx with ApacheBench, native vs inside a Docker container:
+
+![Nginx benchmark](screenshots/03-nginx-benchmark.png)
+![Docker benchmark](screenshots/04-docker-benchmark.png)
+
+Pushing concurrent connections — 1000 completes, 2300 fails after 28,864 requests:
+
+![Load test 1000](screenshots/05-loadtest-1000.png)
+![Load test 2300 fails](screenshots/06-loadtest-2300-fail.png)
+
+Azure training modules completed during the course:
+
+![Azure training](screenshots/07-azure-training.png)
+
 ## Tools & concepts
 
 Microsoft Azure (Policy, Blueprint, Compliance Manager) · NIST CSF 2.0 · GDPR · Cloud Security Alliance · Ubuntu / Linux · Docker · Nginx · ApacheBench · Microsoft SDL
