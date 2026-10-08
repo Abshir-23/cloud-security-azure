@@ -1,6 +1,6 @@
 # Cloud Security on Azure
 
-Designing a secure, compliant cloud architecture for a fictional mobility company, plus hands-on Linux and Docker performance testing. Part of the SKY2100 Cloud Security exam at Kristiania.
+Designing a secure, compliant cloud architecture for a fictional mobility company, plus hands-on Linux and Docker performance testing.
 
 ## Overview
 
@@ -38,7 +38,7 @@ Pushing concurrent connections — 1000 completes, 2300 fails after 28,864 reque
 ![Load test 1000](screenshots/05-loadtest-1000.png)
 ![Load test 2300 fails](screenshots/06-loadtest-2300-fail.png)
 
-Azure training modules completed during the course:
+Azure training modules completed:
 
 ![Azure training](screenshots/07-azure-training.png)
 
