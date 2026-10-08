@@ -1,6 +1,6 @@
 # Cloud Security on Azure
 
-Designing a secure, compliant cloud architecture for a fictional mobility company, plus hands-on Linux and Docker performance testing. Part of the SKY2100 Cloud Security exam at Kristiania. Graded **A**.
+Designing a secure, compliant cloud architecture for a fictional mobility company, plus hands-on Linux and Docker performance testing. Part of the SKY2100 Cloud Security exam at Kristiania.
 
 ## Overview
 
