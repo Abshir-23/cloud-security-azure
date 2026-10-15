@@ -1,51 +1,51 @@
-# Cloud Security on Azure
+# Skysikkerhet i Azure
 
-Designing a secure, compliant cloud architecture for a fictional mobility company, plus hands-on Linux and Docker performance testing.
+Design av en sikker skyarkitektur som oppfyller regelverket, for et fiktivt mobilitetsselskap, pluss praktisk ytelsestesting med Linux og Docker.
 
-## Overview
+## Oversikt
 
-The case study was NordicRide, a scooter and bike sharing platform operating across several Nordic cities, handling real-time location tracking, payments, and user profiles. The task was to design the cloud foundation, address data protection and compliance for international expansion, and back it up with practical testing.
+Casen var NordicRide, en plattform for deling av sparkesykler og sykler i flere nordiske byer, med sanntidssporing av posisjon, betalinger og brukerprofiler. Oppgaven var å designe grunnmuren i skyen, håndtere personvern og regelverk ved internasjonal vekst, og underbygge det med praktisk testing.
 
-## Part A — Architecture & governance
+## Del A: Arkitektur og styring
 
-- **Service model** – PaaS as the backbone for core services (automatic scaling for rush-hour spikes), SaaS for supporting tools, minimal IaaS only where direct control is genuinely needed, justified with the Cloud Security Alliance shared-responsibility model
-- **Deployment** – public cloud with multi-region architecture for low latency and resilience
-- **Data protection & GDPR** – keeping EU user data in EU regions, data residency and access control across regions, using **Azure Policy, Azure Blueprint and Azure Compliance Manager** to enforce rules and evidence compliance
-- **Secure SDLC** – a four-week security training program building security into every stage of development, based on the Microsoft Security Development Lifecycle
-- **NIST CSF 2.0** – mapping all six functions (Govern, Identify, Protect, Detect, Respond, Recover) to concrete operational practices for the platform
+- **Tjenestemodell** – PaaS som ryggrad for kjernetjenestene (automatisk skalering når trafikken topper seg i rushtiden), SaaS for støtteverktøy og minimalt med IaaS, bare der det virkelig trengs direkte kontroll, begrunnet med modellen for delt ansvar fra Cloud Security Alliance
+- **Utrulling** – offentlig sky med arkitektur over flere regioner for lav forsinkelse og robusthet
+- **Personvern og GDPR** – data om brukere i EU holdes i EU-regioner, med styring av datalokasjon og tilgang på tvers av regioner, og **Azure Policy, Azure Blueprint og Azure Compliance Manager** brukes til å håndheve regler og dokumentere etterlevelse
+- **Sikker utviklingsprosess (Secure SDLC)** – et sikkerhetsopplæringsprogram over fire uker som bygger sikkerhet inn i alle faser av utviklingen, basert på Microsoft Security Development Lifecycle
+- **NIST CSF 2.0** – alle seks funksjonene (Govern, Identify, Protect, Detect, Respond, Recover) koblet til konkrete driftsrutiner for plattformen
 
-## Part B — Hands-on lab
+## Del B: Praktisk lab
 
-- Set up Ubuntu on VMware and inspected the system (`lscpu`, `ss -tuln`)
-- Ran a **DDoS-style load test** against Nginx with ApacheBench while monitoring CPU with `top`
-- Repeated the test with Nginx inside a **Docker container** and compared performance — containers added no noticeable overhead
-- Pushed concurrent connections until the server failed, then explained how load balancers and auto-scaling would handle that load in production
+- Satte opp Ubuntu i VMware og undersøkte systemet (`lscpu`, `ss -tuln`)
+- Kjørte en **lasttest i DDoS-stil** mot Nginx med ApacheBench, mens CPU-bruken ble overvåket med `top`
+- Gjentok testen med Nginx i en **Docker-container** og sammenlignet ytelsen; containeren ga ingen merkbar ekstra belastning
+- Økte antall samtidige forbindelser til serveren sviktet, og forklarte deretter hvordan lastbalansering og automatisk skalering ville håndtert belastningen i produksjon
 
-## Lab screenshots
+## Skjermbilder fra laben
 
-System inspection — `lscpu` and open ports with `ss -tuln`:
+Undersøkelse av systemet, `lscpu` og åpne porter med `ss -tuln`:
 
-![lscpu output](screenshots/01-lscpu.png)
-![Open ports](screenshots/02-open-ports.png)
+![Utskrift fra lscpu](screenshots/01-lscpu.png)
+![Åpne porter](screenshots/02-open-ports.png)
 
-Load testing Nginx with ApacheBench, native vs inside a Docker container:
+Lasttesting av Nginx med ApacheBench, direkte og inne i en Docker-container:
 
-![Nginx benchmark](screenshots/03-nginx-benchmark.png)
-![Docker benchmark](screenshots/04-docker-benchmark.png)
+![Ytelsestest av Nginx](screenshots/03-nginx-benchmark.png)
+![Ytelsestest i Docker](screenshots/04-docker-benchmark.png)
 
-Pushing concurrent connections — 1000 completes, 2300 fails after 28,864 requests:
+Økning av samtidige forbindelser: 1000 fullføres, 2300 feiler etter 28 864 forespørsler:
 
-![Load test 1000](screenshots/05-loadtest-1000.png)
-![Load test 2300 fails](screenshots/06-loadtest-2300-fail.png)
+![Lasttest med 1000](screenshots/05-loadtest-1000.png)
+![Lasttest med 2300 feiler](screenshots/06-loadtest-2300-fail.png)
 
-Azure training modules completed:
+Fullførte opplæringsmoduler i Azure:
 
-![Azure training](screenshots/07-azure-training.png)
+![Opplæring i Azure](screenshots/07-azure-training.png)
 
-## Tools & concepts
+## Verktøy og begreper
 
 Microsoft Azure (Policy, Blueprint, Compliance Manager) · NIST CSF 2.0 · GDPR · Cloud Security Alliance · Ubuntu / Linux · Docker · Nginx · ApacheBench · Microsoft SDL
 
-## What I took from it
+## Hva jeg lærte
 
-This is the project that pointed me toward cloud security as a career. Designing for scale, compliance, and failure at the same time, then proving part of it in a lab, is exactly the kind of work I want to do.
+Dette er prosjektet som fikk meg til å velge skysikkerhet som karrierevei. Å designe for skalering, regelverk og feilsituasjoner på samme tid, og så bevise en del av det i en lab, er akkurat den typen arbeid jeg vil gjøre.
